@@ -1,0 +1,105 @@
+.cardInfo {
+	max-width: 350px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #00000050;
+	border-radius: 0.5em;
+	padding: 1.5em 0.5em;
+	color: #fff;
+	text-align: center;
+	box-shadow: 5px 5px 0 0 #00000090;
+	margin-bottom: 3em;
+	opacity: 0;
+	animation: fadeInUp 0.8s forwards; /* Animación para la tarjeta */
+}
+
+.cardInfo__title {
+	color: var(--text);
+	margin-bottom: 0.5em;
+	opacity: 0;
+	animation: fadeIn 1s forwards 0.2s; /* Animación del título */
+}
+
+.cardInfo__container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	font-size: 13px;
+}
+
+.cardInfo__item {
+	width: 100%;
+	opacity: 0;
+	animation: fadeInLeft 0.8s forwards; /* Animación de cada ítem */
+}
+
+.cardInfo__item:nth-child(1) {
+	animation-delay: 0.5s;
+}
+
+.cardInfo__item:nth-child(2) {
+	animation-delay: 0.7s;
+}
+
+.cardInfo__item:nth-child(3) {
+	animation-delay: 0.9s;
+}
+
+.cardInfo__item-title {
+	font-weight: bold;
+}
+
+.cardInfo__item-data {
+	color: #ffffff60;
+	transition: opacity 0.3s ease;
+}
+
+/* Animaciones */
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.cardInfo {
+		max-width: 400px;
+	}
+	.cardInfo__container {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.cardInfo {
+		max-width: 600px;
+	}
+	.cardInfo__container {
+		font-size: 18px;
+	}
+}
